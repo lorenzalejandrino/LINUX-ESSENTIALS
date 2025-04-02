@@ -1,7 +1,7 @@
 name: Log Time Job
 on:
   schedule:
-  - cron: "*/5 * * * *" # Runs every 5 minutes
+  - cron: "*/30 * * * *" 
   workflow_dispatch:
 
 jobs:
@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
 
     permissions:
-      contents: write  # This explicitly gives the action write access to the repository contents
+      contents: write 
 
     steps:
     - name: Checkout repository
