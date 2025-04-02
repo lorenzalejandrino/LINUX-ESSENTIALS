@@ -1,4 +1,4 @@
-LOG_FILE="log.txt"
+LOG_FILE="log2.txt"
 GITHUB_USERNAME="${GITHUB_USER:-unknown_user}"
 
 if [ -f "log2.txt" ]; then
