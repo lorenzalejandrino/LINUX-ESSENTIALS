@@ -1,8 +1,8 @@
 LOG_FILE="log2.txt"
 GITHUB_USERNAME="${GITHUB_USER:-unknown_user}"
 
-if [ -f "log2.txt" ]; then
-    COUNT=$(wc -l < "log2.txt")
+if [ -f "$LOG_FILE" ]; then
+    COUNT=$(wc -l < "$LOG_FILE")
 else
     COUNT=0
 fi
