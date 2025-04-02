@@ -8,10 +8,13 @@ jobs:
   log_time:
     runs-on: ubuntu-latest
 
+    permissions:
+      contents: write  # This explicitly gives the action write access to the repository contents
+
     steps:
     - name: Checkout repository
       uses: actions/checkout@v3
-      
+
     - name: Run logging script
       run: |
         chmod +x log_time.sh
@@ -22,10 +25,9 @@ jobs:
         git config --global user.name "github-actions"
         git config --global user.email "github-actions@github.com"
         git add log.txt
-        git commit -m "Update log file with new timestamp" || echo "No changes to
-        commit"
-        git push
-
+        git commit -m "Update log file with new timestamp" || echo "No changes to commit"
+        
+        # Authenticate using GITHUB_TOKEN
         git push https://github.com/${{ github.repository }}.git HEAD:${{ github.ref }} --force
       env:
         GITHUB_TOKEN: ${{ secrets.TEST }}
