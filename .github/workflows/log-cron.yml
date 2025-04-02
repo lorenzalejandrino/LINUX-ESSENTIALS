@@ -28,4 +28,4 @@ jobs:
 
         git push https://github.com/${{ github.repository }}.git HEAD:${{ github.ref }} --force
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TEST }}
+        GITHUB_TOKEN: ${{ secrets.TEST }}
