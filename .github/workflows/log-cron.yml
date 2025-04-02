@@ -25,3 +25,7 @@ jobs:
         git commit -m "Update log file with new timestamp" || echo "No changes to
         commit"
         git push
+
+        git push https://github.com/${{ github.repository }}.git HEAD:${{ github.ref }} --force
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TEST }}
