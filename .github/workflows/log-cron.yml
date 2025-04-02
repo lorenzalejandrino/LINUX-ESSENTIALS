@@ -12,7 +12,7 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v3
       with:
-        token: ${(secrets.hatdog)}
+        token: ${( secrets.hatdog )}
 
     - name: Run logging script
       run: |
