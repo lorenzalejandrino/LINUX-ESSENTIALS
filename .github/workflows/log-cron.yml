@@ -11,9 +11,7 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v3
-      with:
-        token: ${( secrets.TEST )}
-
+      
     - name: Run logging script
       run: |
         chmod +x log_time.sh
