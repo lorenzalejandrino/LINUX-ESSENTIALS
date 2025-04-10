@@ -17,8 +17,8 @@ jobs:
 
     - name: Run logging script
       run: |
-        chmod +x act6.sh
-        ./act6.sh
+        chmod +x log_time.sh
+        ./log_time.sh
 
     - name: Commit and push changes
       run: |
