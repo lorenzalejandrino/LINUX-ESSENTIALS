@@ -1,8 +1,8 @@
-LOG_FILE="log2.txt"
-GITHUB_USERNAME="${GITHUB_USER:-unknown_user}"
+#!/bin/bash
+USERNAME=${GITHUB_ACTOR:-"unknown-user"}
 
-if [ -f "$LOG_FILE" ]; then
-    COUNT=$(wc -l < "$LOG_FILE")
+if [ -f "$log.txt" ]; then
+    COUNT=$(wc -l < "$log.txt")
 else
     COUNT=0
 fi
@@ -10,4 +10,4 @@ fi
 
 COUNT=$((COUNT + 1))
 
-echo "Update #$COUNT - Current Date and Time: $(date) - Updated by $GITHUB_USERNAME" >> "$LOG_FILE"
+echo "Update #$COUNT - Current Date and Time: $(date) - Updated by $GITHUB_USERNAME" >> "$log.txt"
