@@ -1,13 +1,18 @@
 #!/bin/bash
 USERNAME=${GITHUB_ACTOR:-"unknown-user"}
 
-if [ -f "$log.txt" ]; then
-    COUNT=$(wc -l < "$log.txt")
+if [ -f log.txt ]; then
+  COUNT=$(grep -c "^Log Entry #" log.txt)
 else
-    COUNT=0
+  COUNT=0
 fi
 
+((COUNT++))
 
-COUNT=$((COUNT + 1))
-
-echo "Update #$COUNT - Current Date and Time: $(date) - Updated by $GITHUB_USERNAME" >> "$log.txt"
+{
+  echo "Log Entry #$COUNT"
+  echo "Date & Time: $(date)"
+  echo "Username: $USERNAME"
+  echo "Total Log Entries: $COUNT"
+  echo ""
+} >> log.txt
