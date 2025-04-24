@@ -9,10 +9,4 @@ fi
 
 ((COUNT++))
 
-{
-  echo "Log Entry #$COUNT"
-  echo "Date & Time: $(date)"
-  echo "Username: $USERNAME"
-  echo "Total Log Entries: $COUNT"
-  echo ""
-} >> log.txt
+echo "Log Entry #$COUNT | Date & Time: $(date) | Username: $USERNAME | Total Log Entries: $COUNT" >> log.txt
